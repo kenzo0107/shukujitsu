@@ -4,12 +4,12 @@
 
 # shukujitsu
 
-内閣府ホームページにて提供される日本の祝日データを元に、祝日判定・祝日名を取得する Go ライブラリです。
+祝日判定・祝日名を取得する Go ライブラリです。
 
 
 ## データセット
 
-Google Calendar API で取得しています。
+Google Calendar API で祝日を取得しています。
 GitHub Actions で定期実行し自動更新します。
 
 ## サンプルコード
