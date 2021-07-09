@@ -37,5 +37,5 @@ func HolidayName(t time.Time) (string, error) {
 
 // csv の日付が 2021/7/22 形式である為、フォーマットを合わせる
 func dateStr(t time.Time) string {
-	return t.Format("2006/1/2")
+	return t.Format("2006-01-02")
 }
