@@ -1,0 +1,29 @@
+name: update shukujitsu.yml
+
+on:
+  schedule:
+    # 毎月 1,15日 02:00 UTC に実行
+    - cron: '0 2 1,15 * *'
+
+jobs:
+  update_shukujitsu:
+    timeout-minutes: 5
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: update shukujitsu.csv
+        run: |
+          curl -s -O https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv
+          iconv -f sjis -t utf8 syukujitsu.csv > syukujitsu_utf8.csv
+          awk -F, 'NR>1{print $1": "$2}' syukujitsu_utf8.csv > shukujitsu.yml
+
+      - name: Commit changed files
+        uses: stefanzweifel/git-auto-commit-action@v4.11.0
+        with:
+          commit_message: Automated Change
+          file_pattern: shukujitsu.yml
+          branch: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
