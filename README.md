@@ -1,3 +1,5 @@
+![](logo.jpg)
+
 [![test](https://github.com/kenzo0107/shukujitsu/actions/workflows/test.yml/badge.svg)](https://github.com/kenzo0107/shukujitsu/actions/workflows/test.yml) [![lint](https://github.com/kenzo0107/shukujitsu/actions/workflows/lint.yml/badge.svg)](https://github.com/kenzo0107/shukujitsu/actions/workflows/lint.yml)
 
 # shukujitsu
@@ -7,9 +9,8 @@
 
 ## データセット
 
-[内閣府ホームページ](https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html) で提供される [shukujitsu.csv](https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv) をベースとしております。
-
-GitHub Actions 内で定期的に取得します。
+Google Calendar API で取得しています。
+GitHub Actions で定期実行し自動更新します。
 
 ## サンプルコード
 
