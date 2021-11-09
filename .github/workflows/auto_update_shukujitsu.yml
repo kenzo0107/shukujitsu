@@ -2,8 +2,8 @@ name: update shukujitsu.yml
 
 on:
   schedule:
-    # 毎月 1,15日 02:00 UTC に実行
-    - cron: '0 2 1,15 * *'
+    # 毎週月曜 02:00 UTC に実行
+    - cron: '0 2 * * MON'
 
 jobs:
   update_shukujitsu:
