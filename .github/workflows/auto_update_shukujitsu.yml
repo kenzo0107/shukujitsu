@@ -28,13 +28,11 @@ jobs:
           GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
 
       - name: Commit changed files
-        uses: stefanzweifel/git-auto-commit-action@v4.11.0
+        uses: stefanzweifel/git-auto-commit-action@v4.15.0
         with:
           commit_message: Automated Change
           file_pattern: shukujitsu.yml
           branch: main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # NOTE: auto-commit-action で変更を検知した場合に Slack 通知する。
       #       どの程度頻度があるか把握する上で通知設定をしている。
