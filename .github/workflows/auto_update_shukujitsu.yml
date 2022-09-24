@@ -8,22 +8,18 @@ on:
 jobs:
   update_shukujitsu:
     timeout-minutes: 5
-
-    strategy:
-      matrix:
-        go-version: [1.16.x]
-        os: [ubuntu-latest]
-
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up Go
-        uses: actions/setup-go@v2
+      - name: Pick golang_version
+        id: golang
+        run: echo ::set-output name=version::$(awk '{print $2}' .tool-versions)
+
+      - uses: actions/setup-go@v3
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: ${{ steps.golang.outputs.version }}
 
       - name: auto update shukujitsu.yml by google calendar api
         run: |
