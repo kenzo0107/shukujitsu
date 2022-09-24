@@ -1,7 +1,7 @@
 linters:
   enable:
     - goimports
-    - golint
+    - revive
     - gosec
 
 linters-settings:
@@ -9,12 +9,6 @@ linters-settings:
     # report about not checking of errors in type assertions: `a := b.(MyStruct)`;
     # default is false: such cases aren't reported by default.
     check-type-assertions: true
-  golint:
-    # minimal confidence for issues, default is 0.8
-    min-confidence: 0.3
   govet:
     # report about shadowed variables
     check-shadowing: true
-
-issues:
-  exclude-use-default: false
