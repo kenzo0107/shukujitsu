@@ -1,6 +1,6 @@
 module github.com/kenzo0107/shukujitsu
 
-go 1.19
+go 1.26
 
 require (
 	google.golang.org/api v0.97.0
