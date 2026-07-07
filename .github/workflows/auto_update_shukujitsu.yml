@@ -4,6 +4,7 @@ on:
   schedule:
     # 毎週月曜 02:00 UTC に実行
     - cron: '0 2 * * MON'
+  workflow_dispatch:
 
 jobs:
   update_shukujitsu:
