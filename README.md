@@ -8,7 +8,7 @@
 
 ## データセット
 
-Google Calendar API で祝日を取得しています。
+内閣府が公表している [国民の祝日一覧CSV](https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv) から祝日を取得しています。
 GitHub Actions で定期実行し自動更新します。
 
 ## サンプルコード
