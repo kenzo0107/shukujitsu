@@ -16,11 +16,9 @@ jobs:
 
       - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4.2.0
 
-      - name: auto update shukujitsu.yml by google calendar api
+      - name: auto update shukujitsu.yml from cao.go.jp csv
         run: |
           go run ./auto_update_holiday_dataset/main.go
-        env:
-          GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
 
       - name: Commit changed files
         uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
