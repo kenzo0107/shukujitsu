@@ -3,7 +3,7 @@ module github.com/kenzo0107/shukujitsu
 go 1.26
 
 require (
-	golang.org/x/text v0.40.0
+	golang.org/x/text v0.41.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 
